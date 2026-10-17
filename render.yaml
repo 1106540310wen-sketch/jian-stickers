@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: jian-stickers-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python sticker_mcp.py
+    envVars:
+      - key: MCP_TRANSPORT
+        value: streamable-http
+      - key: PYTHON_VERSION
+        value: 3.12.8
